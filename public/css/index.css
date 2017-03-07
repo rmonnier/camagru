@@ -1,0 +1,55 @@
+html {
+    height: 100%;
+}
+body
+{
+    background-color: lightblue;
+}
+.flex-container
+{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+canvas {
+    display: none;
+}
+video, img, #startbutton, #savebutton, #uploadbutton {
+    display: block;
+    float: left;
+    border: 10px solid #fff;
+    border-radius: 10px;
+}
+#startbutton, #uploadbutton, #savebutton {
+    background: green;
+    border: none;
+    color: #fff;
+    margin: 100px 20px 20px 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+#container {
+    overflow: hidden;
+    width: 100%;
+}
+header, footer
+{
+	width: 100%;
+}
+section
+{
+	width: 70%;
+}
+aside
+{
+	width: 30%;
+}
+img
+{
+  border: solid 1px black;
+  margin:10px;
+}
+.selected
+{
+    border: solid 2px red;
+}
