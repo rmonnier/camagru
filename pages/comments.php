@@ -30,4 +30,3 @@ require "templates/header_loggued.php";
 </table>
 </div>
 </section>
-<script src="js/comments.js"></script>

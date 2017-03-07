@@ -15,7 +15,7 @@ if (isset($_POST['login']) && isset($_POST['mail']) && isset($_POST['passwd']))
 {
 	$name = htmlentities($_POST['name'], ENT_QUOTES | ENT_HTML5);
 	$surname = htmlentities($_POST['surname'], ENT_QUOTES | ENT_HTML5);
-	$mail = htmlentities($_POST['mail'], ENT_QUOTES | ENT_HTML5);
+	$mail = $_POST['mail'];
 	$login = htmlentities($_POST['login'], ENT_QUOTES | ENT_HTML5);
 	$passwd = $_POST['passwd'];
 
@@ -38,7 +38,9 @@ if (isset($_POST['login']) && isset($_POST['mail']) && isset($_POST['passwd']))
 
 		$subject = "Camagru - Registration completed";
 		$message = "Welcome " . $name . " !\n";
-		mail($mail, $subject, $message);
+		$newMail = new \App\Mail();
+		$newMail->sendMail($mail, $subject, $message);
+
 		$_SESSION['loggued_on_user'] = $login;
 		header("Location: index.php");
 	}
