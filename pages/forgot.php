@@ -13,7 +13,7 @@ function generateRandomString($length = 10) {
 if (isset($_POST['login']) && isset($_POST['mail']))
 {
   $login = htmlentities($_POST['login'], ENT_QUOTES | ENT_HTML5);
-  $mail = htmlentities($_POST['mail'], ENT_QUOTES | ENT_HTML5);
+  $mail = $_POST['mail'];
 	$user = $db->getUser($login);
 	if ($user == false || $mail != $user->getMail())
 		echo "<p>Incorrect login or wrong login/mail association.</p>";
