@@ -21,11 +21,13 @@ if (isset($_POST['login']) && isset($_POST['mail']))
 		$newPasswd = generateRandomString();
 		$newPasswdHash = hash('whirlpool', $newPasswd);
 
+    $db->updateUser($login, $newPasswdHash);
+
 		$subject = "Camagru - New password";
 		$message = "Your new password is " . $newPasswd . " !\n";
-		mail($mail, $subject, $message);
-    var_dump($newPasswd);
-		$db->updateUser($login, $newPasswdHash);
+    $newMail = new \App\Mail();
+		$newMail->sendMail($mail, $subject, $message);
+
 		header("Location: index.php");
 	}
 }
