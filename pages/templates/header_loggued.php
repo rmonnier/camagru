@@ -12,5 +12,10 @@ if (isset($_POST['logout']) && $_POST['logout'] == 'logout')
 	<form action="#" method="post" novalidate="1" onsubmit="">
 		<input name="logout" value="logout" type="submit" />
 	</form>
-	<nav><a href="?p=profile"><strong>Profile</strong></a> <a href="?p=gallery">Gallery</a></nav>
+	<nav>
+		<ul>
+			<li><a href="?p=profile">Profile</a></li>
+			<li><a href="?p=gallery">Gallery</a></li>
+		</ul>
+	</nav>
 </header>
