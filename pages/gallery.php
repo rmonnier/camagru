@@ -2,8 +2,9 @@
 require "templates/header_loggued.php";
 
 ?>
+<div class="all-site-wrap">
 <section>
-<div class="flex-container" id="gallery">
+<div class="flex-container" class="gallery">
 	<?php
 	$numberImgsPerPage = 9;
 	$imgs = $db->getImg();
@@ -29,6 +30,7 @@ require "templates/header_loggued.php";
 			?>
 			<div class="flex-item">
 				<?= $entry->displayImg2(); ?>
+			<div>
 			<span>
 				<span class="number"> <?= $entry->number_likes; ?>
 				</span>
@@ -38,6 +40,7 @@ require "templates/header_loggued.php";
 			<span> - <?= $entry->number_comments; ?>
 			</span>
 			<a href="index.php?p=comments&img=<?= $idImg; ?>">Comments</a>
+			</div>
 			</div>
 			<?php
 		}
@@ -56,4 +59,5 @@ require "templates/header_loggued.php";
 		?>
 </div>
 </section>
+</div>
 <script src="js/gallery.js"></script>

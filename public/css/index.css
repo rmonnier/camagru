@@ -3,16 +3,17 @@ html {
 }
 body
 {
-    background-color: lightblue;
+    margin: 0px;
+    background-color: rgb(250, 250, 250);
+}
+canvas {
+    display: none;
 }
 .flex-container
 {
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
-}
-canvas {
-    display: none;
 }
 video, img, #startbutton, #savebutton, #uploadbutton {
     display: block;
@@ -28,21 +29,14 @@ video, img, #startbutton, #savebutton, #uploadbutton {
     padding: 10px 20px;
     font-size: 20px;
 }
-#container {
+.container {
+  display: flex;
+    justify-content: center;
     overflow: hidden;
     width: 100%;
 }
-header, footer
-{
-	width: 100%;
-}
-section
-{
-	width: 70%;
-}
-aside
-{
-	width: 30%;
+#upload {
+  width: 80px;
 }
 img
 {
@@ -52,4 +46,57 @@ img
 .selected
 {
     border: solid 2px red;
+}
+.site-header{
+  display: flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: rgba(0, 0, 0, 0.098)
+}
+.header-gallery-logo {
+  flex: 0 0 100px;
+  text-align: center;
+}
+.header-name {
+  text-align: center;
+  flex: 1;
+}
+.header-logout {
+  flex: 0 0 100px;
+}
+.all-site-wrap {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: rgb(250, 250, 250);
+  border-top-style: : solid;
+  border-top-width: : 2px;
+  border-top-color: rgba(0, 0, 0, 0.098)
+}
+.icon-logo-camera {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+}
+.icon-logo-user {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+}
+.user-camera {
+    flex: 1;
+}
+.gallery {
+  width: 100%;
+  display: flex;
+  	flex-wrap: wrap;
+}
+.icon-logo-delete {
+  width: 25px;
+  height: 25px;
+  display: block;
+  margin: 0 auto;
 }

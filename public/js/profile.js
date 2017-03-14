@@ -7,7 +7,7 @@ var streaming = false,
     photo        = document.querySelector('#photo'),
     fileUploaded = document.querySelector('#fileUploaded'),
     uploadbutton   = document.querySelector('#uploadbutton'),
-    gallery       = document.querySelector('#gallery'),
+    gallery       = document.querySelector('.gallery'),
     startbutton  = document.querySelector('#startbutton'),
     deletebutton = document.querySelectorAll('.deletebutton'),
     filter      = document.querySelector('#filter-selector'),
@@ -54,8 +54,6 @@ function takepicture() {
   canvas.width = width;
   canvas.height = height;
   canvas.getContext('2d').drawImage(video, 0, 0, width, height);
-  var data = canvas.toDataURL('image/png');
-  photo.setAttribute('src', data);
 }
 
 
@@ -68,7 +66,7 @@ function newImage(id, src) {
 
   const newTextDelete = document.createTextNode('Delete');
 
-  const newDelete = document.createElement('span');
+  const newDelete = document.createElement('div');
   newDelete.setAttribute('class', 'deletebutton');
   newDelete.addEventListener('click', function(ev){
     deletePicture(ev);
@@ -111,7 +109,7 @@ function ajaxAdd(data) {
   const params = "action=save&data=" + data + "&filter=" + filter.value;
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      console.log("Added ! Response :\n" + xhttp.responseText + "\n");
+      //console.log("Added ! Response :\n" + xhttp.responseText + "\n");
       var myJSON = xhttp.responseText;
       var myObj = JSON.parse(myJSON);
       addPicture(myObj.id, myObj.src);
@@ -142,7 +140,7 @@ startbutton.addEventListener('click', function(event){
   if (filter.value == "")
     return ;
   takepicture();
-  const data = photo.getAttribute("src").split(',')[1];
+  const data = canvas.toDataURL('image/png').split(',')[1];
 	ajaxAdd(data);
   event.preventDefault();
   }, false);
@@ -163,9 +161,7 @@ function readImage() {
            img.onload = function() {
              const context = canvas.getContext('2d');
              context.drawImage(img, 0, 0, width, height);
-             var data = canvas.toDataURL('image/png');
-             photo.setAttribute('src', data);
-             data = data.split(',')[1];
+             const data = canvas.toDataURL('image/png').split(',')[1];
              ajaxAdd(data);
            };
            img.src = e.target.result;

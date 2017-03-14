@@ -10,6 +10,8 @@
 
 <?= $content; ?>
 
-<footer><p  class = "copyright"> © rmonnier 2016 </p></footer>
+<footer class="site-footer">
+	<p class = "copyright"> © rmonnier 2016 </p>
+</footer>
 </body>
 </html>
