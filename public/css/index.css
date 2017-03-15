@@ -38,7 +38,7 @@ video, img, #startbutton, #savebutton, #uploadbutton {
 #upload {
   width: 80px;
 }
-img
+img, video
 {
   border: solid 1px black;
   margin:10px;
@@ -99,4 +99,7 @@ img
   height: 25px;
   display: block;
   margin: 0 auto;
+}
+.site-footer {
+  text-align: center;
 }
