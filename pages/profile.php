@@ -31,9 +31,13 @@ require "templates/header_loggued.php";
 	</div>
 </section>
 <section class="gallery">
-	<?php foreach($db->getImg($_SESSION['loggued_on_user']) as $entry) { ?>
-			<?= $entry->displayImgProfile(); ?>
-	<?php } ?>
+	<?php foreach($db->getImg($_SESSION['loggued_on_user']) as $entry) {
+		$img = $entry->displayImgProfile();
+		if ($img == -1)
+			continue ;
+		echo $entry->displayImgProfile();
+	}
+	?>
 </section>
 </div>
 <script src="js/profile.js"></script>
