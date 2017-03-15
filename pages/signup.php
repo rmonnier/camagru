@@ -45,15 +45,37 @@ if (isset($_POST['login']) && isset($_POST['mail']) && isset($_POST['passwd']))
 		header("Location: index.php");
 	}
 }
+require "templates/header_unloggued.php";
 
 ?>
-<header>
-	<h1>Camagru</h1>
-</header>
-<p>Create your account :</p>
-<form method="post" action="#">
-	Surname: <input type="text" name="surname" <?php keepValues($surname);?>/>   Name: <input type="text" name="name" <?php keepValues($name);?>/>
-	Mail: <input type="email" name="mail" <?php keepValues($mail);?>/>
-	Login: <input type="text" name="login" <?php keepValues($login);?>/>   Password <input type="password" name="passwd" <?php keepValues($_POST['passwd']);?>/>
-	<input type="submit" value="OK" />
-</form>
+<div class="site-signin">
+	<h2>Create your account :</h2>
+	<form action="#" method="post" novalidate="1" onsubmit="">
+		<table cellspacing="0" role="presentation">
+			<tr>
+				<td><label for="surname">Surname: </label></td>
+				<td><input type="text" name="surname" <?php keepValues($surname);?>/></td>
+			</tr>
+			<tr>
+				<td><label for="name">Name: </label></td>
+				<td><input type="text" name="name" <?php keepValues($name);?>/></td>
+			</tr>
+			<tr>
+				<td><label for="mail">Mail: </label></td>
+				<td><input type="email" name="mail" <?php keepValues($mail);?>/></td>
+			</tr>
+			<tr>
+				<td><label for="login">Login: </label></td>
+				<td><input type="text" name="login" <?php keepValues($login);?>/></td>
+			</tr>
+			<tr>
+				<td><label for="passwd">Password: </label></td>
+				<td><input type="password" name="passwd" <?php keepValues($_POST['passwd']);?>/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="OK"/></td>
+			</tr>
+		</table>
+	</form>
+</div>

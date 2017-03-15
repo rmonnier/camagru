@@ -1,11 +1,3 @@
-<?php
-if (isset($_POST['logout']) && $_POST['logout'] == 'logout')
-{
-	session_destroy();
-	header("Location: index.php");
-}
-
-?>
 <header class="site-header">
 	<div class="header-profile-logo">
 		<a href="?p=profile">

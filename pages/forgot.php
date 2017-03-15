@@ -31,13 +31,26 @@ if (isset($_POST['login']) && isset($_POST['mail']))
 		header("Location: index.php");
 	}
 }
+require "templates/header_unloggued.php";
 
 ?>
-<header>
-	<h1>Camagru</h1>
-</header>
-<p>Get a new password :</p>
-<form method="post" action="#">
-	Mail: <input type="email" name="mail"/> Login: <input type="text" name="login"/>
-	<input type="submit" value="OK" />
-</form>
+
+<div class="site-signin">
+  <h2>Get a new password :</h2>
+  <form action="#" method="post" novalidate="1" onsubmit="">
+    <table cellspacing="0" role="presentation">
+      <tr>
+        <td>Mail: </td>
+        <td><input type="email" name="mail"/></td>
+      </tr>
+      <tr>
+        <td>Login: </td>
+        <td><input type="text" name="login"/></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" value="OK" /></td>
+      </tr>
+    </table>
+  </form>
+</div>

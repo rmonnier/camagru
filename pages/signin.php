@@ -30,28 +30,29 @@ if (isset($_POST['login']) && isset($_POST['passwd']))
 		echo "<p>Incorrect login or password.</p>";
 	}
 }
+require "templates/header_unloggued.php";
+
 ?>
-<header>
-	<h1>Camagru</h1>
-</header>
-<form action="#" method="post" novalidate="1" onsubmit="">
-	<table cellspacing="0" role="presentation">
-		<tr>
-			<td class="html7magic"><label for="email">Email or Phone</label></td>
-			<td class="html7magic"><label for="pass">Password</label></td>
-		</tr>
-		<tr>
-			<td><input type="email" name="login" value="" tabindex="1" /></td>
-			<td><input type="password" name="passwd" tabindex="2" /></td>
-			<td><input type="submit" value="OK" tabindex="3" /></td>
-		</tr>
-		<tr>
-			<td class="login_form_label_field">
-				<div><a href="index.php?p=signup" tabindex="4">Créer un compte</a></div>
-			</td>
-			<td class="login_form_label_field">
-				<div><a href="index.php?p=forgot" tabindex="5">Mot de passe oublié?</a></div>
-			</td>
-		</tr>
-	</table>
-</form>
+<div class="site-signin">
+	<form action="#" method="post" novalidate="1" onsubmit="">
+		<table cellspacing="0" role="presentation">
+			<tr>
+				<td><label for="email">Login</label></td>
+				<td><label for="pass">Password</label></td>
+			</tr>
+			<tr>
+				<td><input type="email" name="login" value="" tabindex="1" /></td>
+				<td><input type="password" name="passwd" tabindex="2" /></td>
+				<td><input type="submit" value="OK" tabindex="3" /></td>
+			</tr>
+			<tr>
+				<td>
+					<div><a href="index.php?p=signup" tabindex="4">Créer un compte</a></div>
+				</td>
+				<td>
+					<div><a href="index.php?p=forgot" tabindex="5">Mot de passe oublié?</a></div>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
