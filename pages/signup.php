@@ -20,15 +20,15 @@ if (isset($_POST['login']) && isset($_POST['mail']) && isset($_POST['passwd']))
 	$passwd = $_POST['passwd'];
 
 	if (strlen($mail) <= 0)
-		echo "<p>Please enter your email.</p>";
+		$error = "Please enter your email.";
 	else if ($db->getUserByMail($mail) != false)
-		echo "<p>The email is already associated with an account.</p>";
+		$error = "The email is already associated with an account.";
 	else if (strlen($login) <= 0)
-		echo "<p>Please enter your login.</p>";
+		$error = "Please enter your login.";
 	else if ($db->getUser($login) != false)
-		echo "<p>This login is already used.</p>";
+		$error = "This login is already used.";
 	else if (!validPassword($passwd))
-		echo "<p>Password must contain at least 8 characters with 1 uppercase, 1 lowercase and 1 digit.</p>";
+		$error = "Password must contain at least 8 characters with 1 uppercase, 1 lowercase and 1 digit.";
 	else
 	{
 		$passwd_hash = hash('whirlpool', $passwd);
@@ -78,4 +78,5 @@ require "templates/header_unloggued.php";
 			</tr>
 		</table>
 	</form>
+	<?php if (isset($error)) { echo "<p>" . $error . "</p>"; }?>
 </div>

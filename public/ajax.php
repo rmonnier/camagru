@@ -72,18 +72,20 @@ if ($_POST['action'] == 'newcomment')
 	$user = $_SESSION['loggued_on_user'];
 	$comment = htmlentities($_POST['comment'], ENT_QUOTES | ENT_HTML5);
 	$idImg = $_POST['idimg'];
+	$galleryPage = $_POST['page'];
 
 	$userOwner = $db->getImgById($idImg)->getLogin();
 	$mailOwner = $db->getUser($userOwner)->getMail();
 	$subject = "Camagru - New Comment";
 	$message = "You've got a new comment ! Available at index.php?p=comments&img=" . $idImg . " !\n";
-	$mail = new \App\Mail();
-	$mail->sendMail($mailOwner, $subject, $message);
+	$newMail = new \App\Mail();
+	$newMail->sendMail($mailOwner, $subject, $message);
 
 	date_default_timezone_set('Europe/Paris');
 	$creationDate = date("Y-m-d H:i:s");
 	$id = $db->addComment($user, $comment, $idImg, $creationDate);
-	header("Location: index.php?p=gallery");
+	$newLocation = "Location: index.php?p=comments&page=" . $galleryPage . "&img=" . $idImg;
+	header($newLocation);
 }
 
 ?>

@@ -64,7 +64,7 @@ function newImage(id, src) {
   newImg.setAttribute('alt', 'photo');
   newImg.setAttribute('src', src);
 
-  const newTextDelete = document.createTextNode('Delete');
+  const newTextDelete = document.createTextNode('X');
 
   const newDelete = document.createElement('div');
   newDelete.setAttribute('class', 'deletebutton');

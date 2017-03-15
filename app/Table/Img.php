@@ -18,8 +18,17 @@ class Img{
 	public function displayImg() {
 		$encodedData = $this->getEncodedData();
 		if ($encodedData == -1)
-			return ;
-		$img = '<div class="img-container flex-item">';
+		return -1;
+		$img = '<img id=' . $this->id . ' class="photo" alt="photo" ';
+		$img .= 'src=data:image/png;base64,' . $encodedData . '>';
+		return $img;
+	}
+
+	public function displayImgProfile() {
+		$encodedData = $this->getEncodedData();
+		if ($encodedData == -1)
+			return -1;
+		$img = '<div class="img-container">';
 		$img .= '<img id=' . $this->id . ' class="photo" alt="photo" ';
 		$img .= 'src=data:image/png;base64,' . $encodedData . '>';
 		$img .= '<span class="deletebutton">X';
@@ -27,14 +36,6 @@ class Img{
 		return $img;
 	}
 
-	public function displayImg2() {
-		$encodedData = $this->getEncodedData();
-		if ($encodedData == -1)
-			return ;
-		$img = '<img id=' . $this->id . ' class="photo" alt="photo" ';
-		$img .= 'src=data:image/png;base64,' . $encodedData . '>';
-		return $img;
-	}
 
 	public function getId() {
 		return $this->id;

@@ -16,7 +16,7 @@ if (isset($_POST['login']) && isset($_POST['mail']))
   $mail = $_POST['mail'];
 	$user = $db->getUser($login);
 	if ($user == false || $mail != $user->getMail())
-		echo "<p>Incorrect login or wrong login/mail association.</p>";
+		$error = "<p>Incorrect login or wrong login/mail association.</p>";
 	else {
 		$newPasswd = generateRandomString();
 		$newPasswdHash = hash('whirlpool', $newPasswd);
@@ -53,4 +53,5 @@ require "templates/header_unloggued.php";
       </tr>
     </table>
   </form>
+  <?php if (isset($error)) { echo "<p>" . $error . "</p>"; }?>
 </div>

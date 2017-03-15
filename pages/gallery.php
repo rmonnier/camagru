@@ -3,8 +3,7 @@ require "templates/header_loggued.php";
 
 ?>
 <div class="all-site-wrap">
-<section>
-<div class="flex-container" class="gallery">
+<section class="gallery">
 	<?php
 	$numberImgsPerPage = 9;
 	$imgs = $db->getImg();
@@ -24,40 +23,48 @@ require "templates/header_loggued.php";
 	{
 		if ($key >= ($actualPage - 1) * $numberImgsPerPage && $key <= $actualPage * $numberImgsPerPage - 1)
 		{
-			$idImg = $entry->getId();
+			$img = $entry->displayImg();
+			if ($img == -1)
+				continue ;
 			$login = $_SESSION['loggued_on_user'];
+			$numberLikes = $entry->number_likes;
+			$actionLike = $db->isLiked($idImg, $login) == 1 ? "Unlike" : "Like";
+			$numberComments = $entry->number_comments;
+			$idImg = $entry->getId();
+			$addCommentLink = 'index.php?p=comments&page=' . $actualPage . '&img=' . $idImg;
 
 			?>
 			<div class="img-container img-container-gallery">
-				<?= $entry->displayImg2(); ?>
-			<div>
-			<span>
-				<span class="number"> <?= $entry->number_likes; ?>
-				</span>
-				&#128077;
-			</span>
-			<a class="like" href="#"><?= $db->isLiked($idImg, $login) == 1 ? "Unlike" : "Like";?></a>
-			<span> - <?= $entry->number_comments; ?>
-			</span>
-			<a href="index.php?p=comments&img=<?= $idImg; ?>">Comments</a>
-			</div>
+				<?= $img ?>
+				<div>
+					<span>
+						<span class="number">
+							<?= $numberLikes; ?>
+						</span>
+						&#128077;
+					</span>
+					<a class="like" href="#"><?= $actionLike; ?></a>
+					<span>
+						 <?= $numberComments; ?>
+					</span>
+					<a href="<?= $addCommentLink; ?>">Comments</a>
+				</div>
 			</div>
 			<?php
 		}
 	}
 ?>
-	</div>
-	<div width="100%">Page :
-		<?php
-			for ($i = 1; $i <= $numberPages; $i++)
-			{
-				if ($i == $actualPage)
-					echo ' [ '.$i.' ] ';
-			  else
-					echo ' <a href="index.php?p=gallery&page=' . $i . '">' . $i . '</a> ';
-			}
-		?>
-</div>
 </section>
+<nav class="pages-index-gallery">Page :
+	<?php
+	for ($i = 1; $i <= $numberPages; $i++)
+	{
+		if ($i == $actualPage)
+		echo ' [ '.$i.' ] ';
+		else
+		echo ' <a href="index.php?p=gallery&page=' . $i . '">' . $i . '</a> ';
+	}
+	?>
+</nav>
 </div>
 <script src="js/gallery.js"></script>

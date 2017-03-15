@@ -1,5 +1,4 @@
 <?php
-
 function auth($login, $passwd, $db)
 {
 	$user = $db->getUser($login);
@@ -22,17 +21,17 @@ if (isset($_POST['login']) && isset($_POST['passwd']))
 	{
 		$_SESSION['loggued_on_user'] = $login;
 		header("Location: index.php");
-		echo "OK!";
 	}
 	else
 	{
 		$_SESSION['loggued_on_user'] = "";
-		echo "<p>Incorrect login or password.</p>";
+		$error = "Incorrect login or password.";
 	}
 }
 require "templates/header_unloggued.php";
 
 ?>
+
 <div class="site-signin">
 	<form action="#" method="post" novalidate="1" onsubmit="">
 		<table cellspacing="0" role="presentation">
@@ -55,4 +54,5 @@ require "templates/header_unloggued.php";
 			</tr>
 		</table>
 	</form>
+	<?php if (isset($error)) { echo "<p>" . $error . "</p>"; }?>
 </div>

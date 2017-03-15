@@ -9,9 +9,12 @@ class Comment{
   private $date_creation;
 
   public function getComment() {
-    $comment = '<p idcomment="' . $this->id . '"><span>' . $this->comment;
-    $comment .= '</span><span>Written by ' . $this->login . ' on ' . $this->date_creation;
-    $comment .= '</span></p><br>';
+    $comment = '<div idcomment="' . $this->id . '">';
+    $comment .= '<span>' . $this->comment . '</span></br>';
+    $comment .= '<sup>' . $this->login . ' </sup>';
+    $comment .= '<sup>' . date("H\hi d/m/y", strtotime($this->date_creation));
+    $comment .= '</sup>';
+    $comment .= '</div>';
     return $comment;
   }
 
