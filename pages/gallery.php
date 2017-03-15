@@ -28,7 +28,7 @@ require "templates/header_loggued.php";
 			$login = $_SESSION['loggued_on_user'];
 
 			?>
-			<div class="flex-item">
+			<div class="img-container img-container-gallery">
 				<?= $entry->displayImg2(); ?>
 			<div>
 			<span>

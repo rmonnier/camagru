@@ -20,6 +20,7 @@ function changeStateLike(event) {
   const photoContainer = event.currentTarget.parentNode;
   var number = photoContainer.getElementsByClassName('number')[0];
   const currentPhoto = photoContainer.firstElementChild;
+  console.log(currentPhoto);
   const id = currentPhoto.getAttribute("id");
 
   let newStatus;

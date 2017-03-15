@@ -43,6 +43,21 @@ img, video
   border: solid 1px black;
   margin:10px;
 }
+.img-container {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+@media screen and (min-width: 900px) {
+    .img-container {
+        width: 45%;
+    }
+}
+@media screen and (min-width: 1300px) {
+    .img-container {
+        width: 30%;
+    }
+}
 .selected
 {
     border: solid 2px red;
@@ -54,6 +69,10 @@ img, video
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: rgba(0, 0, 0, 0.098)
+}
+.header-profile-logo {
+  flex: 0 0 200px;
+  text-align: center;
 }
 .header-gallery-logo {
   flex: 0 0 100px;
@@ -92,13 +111,14 @@ img, video
 .gallery {
   width: 100%;
   display: flex;
-  	flex-wrap: wrap;
+  flex-wrap: wrap;
+    justify-content: center;
 }
 .icon-logo-delete {
   width: 25px;
   height: 25px;
   display: block;
-  margin: 0 auto;
+  margin: 0;
 }
 .site-footer {
   text-align: center;
