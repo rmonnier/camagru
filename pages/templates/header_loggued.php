@@ -30,9 +30,7 @@ if (isset($_POST['logout']) && $_POST['logout'] == 'logout')
 		</a>
 	</div>
 	<div class="header-logout">
-		<span>Connected as <?= $_SESSION['loggued_on_user']; ?></span>
-		<form action="#" method="post" novalidate="1" onsubmit="">
-			<input name="logout" value="logout" type="submit" />
-		</form>
+		<span>Connected as <?= $_SESSION['loggued_on_user']; ?></span></br>
+		<a href="?p=logout" id="logout-button">Log me out</a>
 	</div>
 </header>

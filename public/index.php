@@ -24,7 +24,9 @@ else
 	if ($p == 'gallery')
   	require "../pages/gallery.php";
 	else if ($p == 'comments')
-	  require "../pages/comments.php";	
+	  require "../pages/comments.php";
+	else if ($p == 'logout')
+		require "../pages/logout.php";
 	else
 		require "../pages/profile.php";
 }
