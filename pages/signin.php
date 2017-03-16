@@ -46,10 +46,10 @@ require "templates/header_unloggued.php";
 			</tr>
 			<tr>
 				<td>
-					<div><a href="index.php?p=signup" tabindex="4">Créer un compte</a></div>
+					<div><a href="index.php?p=signup" tabindex="4">Create an account</a></div>
 				</td>
 				<td>
-					<div><a href="index.php?p=forgot" tabindex="5">Mot de passe oublié?</a></div>
+					<div><a href="index.php?p=forgot" tabindex="5">Forgot?</a></div>
 				</td>
 			</tr>
 		</table>
