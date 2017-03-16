@@ -23,7 +23,7 @@ class Database{
 	public function getUser($login)
 	{
 		$pdo = $this->getPDO();
-		$query = 'SELECT * FROM users WHERE login = :login';
+		$query = 'SELECT * FROM users WHERE login = :login LIMIT 1';
 		$stmt = $pdo->prepare($query);
 
 		$stmt->execute(array(':login' => $login));
