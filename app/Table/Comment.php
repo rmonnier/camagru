@@ -9,6 +9,7 @@ class Comment{
   private $date_creation;
 
   public function getComment() {
+    date_default_timezone_set('Europe/Paris');
     $comment = '<div idcomment="' . $this->id . '">';
     $comment .= '<span>' . $this->comment . '</span></br>';
     $comment .= '<sup>' . $this->login . ' </sup>';

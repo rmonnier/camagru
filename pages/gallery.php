@@ -27,10 +27,10 @@ require "templates/header_loggued.php";
 			if ($img == -1)
 				continue ;
 			$login = $_SESSION['loggued_on_user'];
-			$numberLikes = $entry->number_likes;
-			$actionLike = $db->isLiked($idImg, $login) == 1 ? "Unlike" : "Like";
-			$numberComments = $entry->number_comments;
 			$idImg = $entry->getId();
+			$numberLikes = $entry->number_likes;
+			$actionLike = $db->isLiked($idImg, $login) >= 1 ? "Unlike" : "Like";
+			$numberComments = $entry->number_comments;
 			$addCommentLink = 'index.php?p=comments&page=' . $actualPage . '&img=' . $idImg;
 
 			?>

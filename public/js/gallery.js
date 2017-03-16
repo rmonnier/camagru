@@ -17,7 +17,7 @@ function changeFirstChildTextNode(element, newText) {
 function changeStateLike(event) {
   const a = event.currentTarget;
   const status = event.currentTarget.firstChild;
-  const photoContainer = event.currentTarget.parentNode;
+  const photoContainer = event.currentTarget.parentNode.parentNode;
   var number = photoContainer.getElementsByClassName('number')[0];
   const currentPhoto = photoContainer.firstElementChild;
   console.log(currentPhoto);

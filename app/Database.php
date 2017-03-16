@@ -148,7 +148,6 @@ class Database{
 	public function numberLikes($id_img)
 	{
 		$pdo = $this->getPDO();
-		if ($login !== false)
 		$sql = 'SELECT COUNT(*)
 				FROM likes
 				WHERE id_img = :id_img';
@@ -162,7 +161,8 @@ class Database{
 	public function isLiked($id_img, $login)
 	{
 		$pdo = $this->getPDO();
-		if ($login !== false)
+		if ($login === false)
+			return false;
 		$sql = 'SELECT COUNT(*)
 				FROM likes
 				WHERE id_img = :id_img AND login = :login';

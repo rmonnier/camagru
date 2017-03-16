@@ -20,8 +20,8 @@ class Mail{
 		//==========
 
 		//=====Création du header de l'e-mail.
-		$header = "From: \"Camagru\"<rmonnier@e1z3r4p4.42.us.org>".$passage_ligne;
-		$header.= "Reply-to: \"Camagru\" <rmonnier@e1z3r4p4.42.us.org>".$passage_ligne;
+		$header = "From: \"Camagru\"<rmonnier@e1z3r5p6.42.us.org>".$passage_ligne;
+		$header.= "Reply-to: \"Camagru\" <rmonnier@e1z3r5p6.42.us.org>".$passage_ligne;
 		$header.= "MIME-Version: 1.0".$passage_ligne;
 		$header.= "Content-Type: multipart/alternative;".$passage_ligne." boundary=\"$boundary\"".$passage_ligne;
 		//==========
