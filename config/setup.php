@@ -46,7 +46,7 @@ $query = $stmt->execute();
 $query = 'CREATE TABLE IF NOT EXISTS comments
 	(id INT PRIMARY KEY AUTO_INCREMENT,
 	id_img INT NOT NULL,
-	comment TEXT CHARSET ASCII NOT NULL,
+	comment TEXT NOT NULL,
 	login VARCHAR(255) NOT NULL,
 	date_creation DATETIME NOT NULL)';
 
