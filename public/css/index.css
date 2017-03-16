@@ -48,6 +48,10 @@ img, video
   display: block;
   margin: 0;
 }
+.deletebutton
+{
+  cursor: pointer;
+}
 
 /*
 ** Header
