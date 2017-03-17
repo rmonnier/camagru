@@ -50,7 +50,7 @@ require "templates/header_unloggued.php";
 ?>
 <div class="site-signin">
 	<h2>Create your account :</h2>
-	<form action="#" method="post" novalidate="1" onsubmit="">
+	<form action="#" method="post">
 		<table cellspacing="0" role="presentation">
 			<tr>
 				<td><label for="surname">Surname: </label></td>
