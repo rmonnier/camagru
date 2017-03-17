@@ -31,7 +31,7 @@ if (isset($_POST['login']) && isset($_POST['mail']))
 		header("Location: index.php");
 	}
 }
-require "templates/header_unloggued.php";
+require "templates/header_unlogged.php";
 
 ?>
 

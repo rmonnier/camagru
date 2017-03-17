@@ -1,5 +1,5 @@
 <?php
-require "templates/header_loggued.php";
+require "templates/header_logged.php";
 
 ?>
 <div class="all-site-wrap">
@@ -31,7 +31,7 @@ require "templates/header_loggued.php";
 	</div>
 </section>
 <section class="gallery">
-	<?php foreach($db->getImg($_SESSION['loggued_on_user']) as $entry) {
+	<?php foreach($db->getImg($_SESSION['logged_on_user']) as $entry) {
 		$img = $entry->displayImgProfile();
 		if ($img == -1)
 			continue ;

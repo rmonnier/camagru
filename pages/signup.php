@@ -41,11 +41,11 @@ if (isset($_POST['login']) && isset($_POST['mail']) && isset($_POST['passwd']))
 		$newMail = new \App\Mail();
 		$newMail->sendMail($mail, $subject, $message);
 
-		$_SESSION['loggued_on_user'] = $login;
+		$_SESSION['logged_on_user'] = $login;
 		header("Location: index.php");
 	}
 }
-require "templates/header_unloggued.php";
+require "templates/header_unlogged.php";
 
 ?>
 <div class="site-signin">

@@ -1,5 +1,5 @@
 <?php
-require "templates/header_loggued.php";
+require "templates/header_logged.php";
 
 ?>
 <div class="all-site-wrap">

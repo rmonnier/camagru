@@ -1,5 +1,5 @@
 <?php
-require "templates/header_loggued.php";
+require "templates/header_logged.php";
 
 ?>
 <div class="all-site-wrap">
@@ -26,7 +26,7 @@ require "templates/header_loggued.php";
 			$img = $entry->displayImg();
 			if ($img == -1)
 				continue ;
-			$login = $_SESSION['loggued_on_user'];
+			$login = $_SESSION['logged_on_user'];
 			$idImg = $entry->getId();
 			$numberLikes = $entry->number_likes;
 			$actionLike = $db->isLiked($idImg, $login) >= 1 ? "Unlike" : "Like";

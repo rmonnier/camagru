@@ -22,7 +22,7 @@
 		</a>
 	</div>
 	<div class="header-logout">
-		<span>Connected as <?= $_SESSION['loggued_on_user']; ?></span></br>
+		<span>Connected as <?= $_SESSION['logged_on_user']; ?></span></br>
 		<a href="?p=logout" id="logout-button">Log me out</a>
 	</div>
 </header>

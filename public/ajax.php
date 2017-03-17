@@ -16,7 +16,7 @@ if ($_REQUEST['action'] == 'save')
 	$filterSelected = $_REQUEST['filter'];
 	$encodedData = str_replace(' ','+',$encodedData);
   $decocedData = base64_decode($encodedData);
-	$user = $_SESSION['loggued_on_user'];
+	$user = $_SESSION['logged_on_user'];
 	$imgFolder = "../database/" . $user . "/";
 
 	date_default_timezone_set('Europe/Paris');
@@ -39,7 +39,7 @@ if ($_REQUEST['action'] == 'save')
 else if ($_REQUEST['action'] == 'delete')
 {
 	$id = $_REQUEST['id'];
-	$user = $_SESSION['loggued_on_user'];
+	$user = $_SESSION['logged_on_user'];
 	$imgFolder = "../database/" . $user . "/";
 	$imgPath = $imgFolder . $id . ".png";
 
@@ -50,7 +50,7 @@ else if ($_REQUEST['action'] == 'delete')
 if ($_REQUEST['action'] == 'like')
 {
 	$idImg = $_REQUEST['id'];
-	$user = $_SESSION['loggued_on_user'];
+	$user = $_SESSION['logged_on_user'];
 
 	date_default_timezone_set('Europe/Paris');
 	$creationDate = date("Y-m-d H:i:s");
@@ -61,7 +61,7 @@ if ($_REQUEST['action'] == 'like')
 if ($_REQUEST['action'] == 'unlike')
 {
 	$idImg = $_REQUEST['id'];
-	$user = $_SESSION['loggued_on_user'];
+	$user = $_SESSION['logged_on_user'];
 
 	$id = $db->deleteLike($user, $idImg);
 	echo $id;
@@ -69,7 +69,7 @@ if ($_REQUEST['action'] == 'unlike')
 
 if ($_POST['action'] == 'newcomment')
 {
-	$user = $_SESSION['loggued_on_user'];
+	$user = $_SESSION['logged_on_user'];
 	$comment = htmlentities($_POST['comment'], ENT_QUOTES | ENT_HTML5);
 	$idImg = $_POST['idimg'];
 	$galleryPage = $_POST['page'];

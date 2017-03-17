@@ -19,16 +19,16 @@ if (isset($_POST['login']) && isset($_POST['passwd']))
 	$ret = auth($login, $_POST['passwd'], $db);
 	if ($ret == 1)
 	{
-		$_SESSION['loggued_on_user'] = $login;
+		$_SESSION['logged_on_user'] = $login;
 		header("Location: index.php");
 	}
 	else
 	{
-		$_SESSION['loggued_on_user'] = "";
+		$_SESSION['logged_on_user'] = "";
 		$error = "Incorrect login or password.";
 	}
 }
-require "templates/header_unloggued.php";
+require "templates/header_unlogged.php";
 
 ?>
 

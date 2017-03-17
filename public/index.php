@@ -10,7 +10,7 @@ $db = new App\Database();
 $p = $_GET['p'];
 
 ob_start();
-if ($_SESSION['loggued_on_user'] == '')
+if ($_SESSION['logged_on_user'] == '')
 {
 	if ($p == 'signup')
 		require "../pages/signup.php";
