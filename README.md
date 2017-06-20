@@ -1,3 +1,5 @@
+# Camagru
+
 ## Synopsis
 
 An instagram like website written with Apache, PHP and MYSQL. Project part of the web branch at 42 school.
