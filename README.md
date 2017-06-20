@@ -1,11 +1,11 @@
 ## Synopsis
 
-A basic PHP instagram like website. Project part of the web branch at 42 school.
+An instagram like website written with Apache, PHP and MYSQL. Project part of the web branch at 42 school.
 No libraries were allowed (both in front and back).
 
 ## Motivation
 
-Learn PHP and old school javascript, SQL
+Learn the most popular historical web stack.
 
 ## Which features are done
 
